@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_25_104613) do
+ActiveRecord::Schema.define(version: 2020_01_25_111651) do
 
   create_table "events", force: :cascade do |t|
     t.date "date"
@@ -18,6 +18,24 @@ ActiveRecord::Schema.define(version: 2020_01_25_104613) do
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "payments", force: :cascade do |t|
+    t.integer "amount"
+    t.integer "game_id"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["game_id"], name: "index_payments_on_game_id"
+    t.index ["user_id"], name: "index_payments_on_user_id"
+  end
+
+  create_table "user_payments", force: :cascade do |t|
+    t.integer "amount"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_user_payments_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
