@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date: 2020-01-25
+  amount: 1
+  description: MyText
+
+two:
+  date: 2020-01-25
+  amount: 1
+  description: MyText
